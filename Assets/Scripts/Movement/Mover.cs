@@ -9,10 +9,6 @@ public class Mover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButton(0))
-        {
-            MoveToCursor();
-        }
         UpdateAnimator();
     }
 
@@ -26,18 +22,11 @@ public class Mover : MonoBehaviour
         GetComponent<Animator>().SetFloat("forwardSpeed", speed);
     }
 
-    private void MoveToCursor()
+    
+
+    // move to a certain point if ray hit somewhere
+    public void MoveTo(Vector3 destination)
     {
-        //casting ray from camera to a point
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        bool hasHit = Physics.Raycast(ray, out hit); //putting information of ray into hit
-
-        //if ray hits somewhere, player moves to that point, otherwise not
-        if(hasHit == true)
-        {
-            GetComponent<NavMeshAgent>().destination = hit.point;
-        }
-
+        GetComponent<NavMeshAgent>().destination = destination ;
     }
 }
