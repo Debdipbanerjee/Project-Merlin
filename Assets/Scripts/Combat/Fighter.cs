@@ -5,7 +5,7 @@ using RPG.Core;
 
 namespace RPG.Combat
 {
-    public class Fighter : MonoBehaviour
+    public class Fighter : MonoBehaviour , IAction 
     {
         [SerializeField] float weaponRange = 2f;
         Transform target;
@@ -23,7 +23,7 @@ namespace RPG.Combat
             else
             {
                 //There's an enemy but in your range, don't move & attack
-                GetComponent<Mover>().Stop();
+                GetComponent<Mover>().Cancel();
             }
         }
 
