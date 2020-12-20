@@ -9,6 +9,12 @@ namespace RPG.Combat
 
         bool isDead = false;
 
+        //returns if the target is dead or not
+        public bool IsDead()
+        {
+            return isDead;
+        }
+
         public void TakeDamage(float damage)
         {
             //health might go below 0 so take the higher one
@@ -21,7 +27,7 @@ namespace RPG.Combat
 
         private void Die()
         {
-            //if enemy is dead, don't attack
+            //if enemy is already dead, don't trigger death animation
             if (isDead) return;
 
             isDead = true;
