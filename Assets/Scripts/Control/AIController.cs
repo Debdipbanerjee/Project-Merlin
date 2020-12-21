@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using RPG.Combat;
+using System.Collections;
 using UnityEngine;
 
 namespace RPG.Control
@@ -7,18 +8,32 @@ namespace RPG.Control
     {
         [SerializeField] float chaseDistance = 5f;
 
+        Fighter fighter;
+        GameObject player;
+
+        private void Start()
+        {
+            fighter = GetComponent<Fighter>();
+            player = GameObject.FindWithTag("Player");
+        }
+
         private void Update()
         {
-            if (DistanceToPlayer() < chaseDistance)
+            if (InAttackRangeOfPlayer(player)  && fighter.CanAttack(player))
             {
-                print(gameObject.name + " will chase that motherfucker");
+                fighter.Attack(player);
+            }
+            else
+            {
+                //stop attacking if player is out of range
+                fighter.Cancel();
             }
         }
 
-        private float DistanceToPlayer()
+        private bool InAttackRangeOfPlayer(GameObject player)
         {
-            GameObject player = GameObject.FindWithTag("Player");
-            return Vector3.Distance(player.transform.position, transform.position);
+            float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
+            return distanceToPlayer < chaseDistance;
         }
     }
 }

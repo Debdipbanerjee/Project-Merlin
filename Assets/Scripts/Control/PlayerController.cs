@@ -30,8 +30,12 @@ namespace RPG.Control
             {
                 //if any item has rigidbody or collider then it's enemy
                 CombatTarget target = hit.transform.GetComponent<CombatTarget>();
-                //No enemy, so leave the rest below & check new item
-                if(!GetComponent<Fighter>().CanAttack(target))
+
+                //if target doesn't have combat target, leave
+                if (target == null) continue;
+
+                //No target, so leave the rest below & check new item
+                if(!GetComponent<Fighter>().CanAttack(target.gameObject))
                 {
                     continue;
                 }
@@ -39,7 +43,7 @@ namespace RPG.Control
                 //if there's enemy, Attack
                 if(Input.GetMouseButtonDown(0))
                 {
-                    GetComponent<Fighter>().Attack(target);
+                    GetComponent<Fighter>().Attack(target.gameObject);
                 }
                 return true;
             }

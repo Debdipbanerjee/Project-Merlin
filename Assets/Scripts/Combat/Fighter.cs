@@ -25,7 +25,7 @@ namespace RPG.Combat
             //if target is dead, don't attack
             if (target.IsDead() == true) return;
 
-            //if there's an enemy but not in range, move towards him
+            //if there's a target but not in range, move towards him
             if (!GetIsInRange())
             {
                 GetComponent<Mover>().MoveTo(target.transform.position);
@@ -70,7 +70,8 @@ namespace RPG.Combat
             return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
         }
 
-        public bool CanAttack(CombatTarget combatTarget)
+        //checks if target is not null and is alive or not
+        public bool CanAttack(GameObject combatTarget)
         {
             if (combatTarget == null)
             {
@@ -81,7 +82,7 @@ namespace RPG.Combat
             return targetToTest != null && !targetToTest.IsDead();
         }
 
-        public void Attack(CombatTarget combatTarget)
+        public void Attack(GameObject combatTarget)
         {
             GetComponent<ActionScheduler>().StartAction(this);
             target = combatTarget.GetComponent<Health>();
