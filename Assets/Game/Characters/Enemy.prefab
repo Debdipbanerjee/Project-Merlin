@@ -27,6 +27,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseDistance: 5
+  suspicionTime: 3
 --- !u!114 &114886937178365734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,6 +122,11 @@ PrefabInstance:
         type: 3}
       propertyPath: weaponRange
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 997507657606339077, guid: a0e2c4b8b25105949a9bff2b465edb68,
+        type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2824148962842134434, guid: a0e2c4b8b25105949a9bff2b465edb68,
         type: 3}

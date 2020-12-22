@@ -9,6 +9,7 @@ namespace RPG.Control
     public class AIController : MonoBehaviour
     {
         [SerializeField] float chaseDistance = 5f;
+        [SerializeField] float suspicionTime = 3f;
 
         Fighter fighter;
         GameObject player;
@@ -16,6 +17,7 @@ namespace RPG.Control
         Mover mover;
 
         Vector3 gaurdPosition;
+        float timeSinceLastSawPlayer = Mathf.Infinity;
 
         private void Start()
         {
@@ -28,6 +30,7 @@ namespace RPG.Control
             gaurdPosition = transform.position;
         }
 
+        // Custom Finite State Machine for AI
         private void Update()
         {
             //if AI is dead, don't do anything
@@ -35,13 +38,40 @@ namespace RPG.Control
 
             if (InAttackRangeOfPlayer(player)  && fighter.CanAttack(player))
             {
-                fighter.Attack(player);
+                timeSinceLastSawPlayer = 0;
+                //Attack State
+                AttackBehaviour();
+            }
+            else if(timeSinceLastSawPlayer < suspicionTime)
+            {
+                //Suspicion state
+                SuspicionBehaviour();
+
             }
             else
             {
+                //Guarding State
                 //stop attacking if player is out of range & return to previous position
-                mover.StartMoveAction(gaurdPosition);
+                GuardBehaviour();
             }
+
+            //increasing time since last saw player
+            timeSinceLastSawPlayer += Time.deltaTime;
+        }
+
+        private void GuardBehaviour()
+        {
+            mover.StartMoveAction(gaurdPosition);
+        }
+
+        private void SuspicionBehaviour()
+        {
+            GetComponent<ActionScheduler>().CancelCurrentAction();
+        }
+
+        private void AttackBehaviour()
+        {
+            fighter.Attack(player);
         }
 
         private bool InAttackRangeOfPlayer(GameObject player)
