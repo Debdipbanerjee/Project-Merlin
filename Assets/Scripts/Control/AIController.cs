@@ -1,5 +1,6 @@
 ﻿using RPG.Combat;
 using RPG.Core;
+using RPG.Movement;
 using System.Collections;
 using UnityEngine;
 
@@ -12,12 +13,19 @@ namespace RPG.Control
         Fighter fighter;
         GameObject player;
         Health health;
+        Mover mover;
+
+        Vector3 gaurdPosition;
 
         private void Start()
         {
             fighter = GetComponent<Fighter>();
             player = GameObject.FindWithTag("Player");
             health = GetComponent<Health>();
+            mover = GetComponent<Mover>();
+
+            // to return the guard to previous location
+            gaurdPosition = transform.position;
         }
 
         private void Update()
@@ -31,8 +39,8 @@ namespace RPG.Control
             }
             else
             {
-                //stop attacking if player is out of range
-                fighter.Cancel();
+                //stop attacking if player is out of range & return to previous position
+                mover.StartMoveAction(gaurdPosition);
             }
         }
 
