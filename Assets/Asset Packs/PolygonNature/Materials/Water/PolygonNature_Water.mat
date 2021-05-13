@@ -93,11 +93,11 @@ Material:
     - _WaterScale: 0.175
     - _WaterSmoothness: 2
     - _WaterSpecular: 0
-    - _WaterSpeed: 0.042
+    - _WaterSpeed: 0.2
     - _ZWrite: 1
     - __dirty: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _WaterDeepColor: {r: 0.14150944, g: 0.46659866, b: 0.5660378, a: 0}
-    - _WaterShallowColor: {r: 0.13679248, g: 1, b: 0.9732748, a: 0}
+    - _WaterDeepColor: {r: 0.19108224, g: 0.22062492, b: 0.3584906, a: 0}
+    - _WaterShallowColor: {r: 0.6009256, g: 0.60140026, b: 0.6037736, a: 0}
