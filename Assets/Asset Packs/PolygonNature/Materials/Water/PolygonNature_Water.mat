@@ -99,5 +99,5 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _WaterDeepColor: {r: 0.28128338, g: 0.46226418, b: 0.3080192, a: 0}
-    - _WaterShallowColor: {r: 0.3503646, g: 0.5660378, b: 0.27500895, a: 0}
+    - _WaterDeepColor: {r: 0.15819687, g: 0.4245283, b: 0.2445686, a: 0}
+    - _WaterShallowColor: {r: 0.26366144, g: 0.7075472, b: 0.31079587, a: 0}
