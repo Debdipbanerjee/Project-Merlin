@@ -12,6 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fe826c8b59c1b643b08002c821bbde7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &220567551
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5882375048140203094}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!1001 &6288064885535266344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -84,37 +98,37 @@ PrefabInstance:
     - target: {fileID: 2824148962842134435, guid: a0e2c4b8b25105949a9bff2b465edb68,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.92
+      value: 4.73
       objectReference: {fileID: 0}
     - target: {fileID: 2824148962842134435, guid: a0e2c4b8b25105949a9bff2b465edb68,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2824148962842134435, guid: a0e2c4b8b25105949a9bff2b465edb68,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.65
+      value: 45.79
       objectReference: {fileID: 0}
     - target: {fileID: 2824148962842134435, guid: a0e2c4b8b25105949a9bff2b465edb68,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2824148962842134435, guid: a0e2c4b8b25105949a9bff2b465edb68,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.8177154
       objectReference: {fileID: 0}
     - target: {fileID: 2824148962842134435, guid: a0e2c4b8b25105949a9bff2b465edb68,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2824148962842134435, guid: a0e2c4b8b25105949a9bff2b465edb68,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.5756228
       objectReference: {fileID: 0}
     - target: {fileID: 2824148962842134435, guid: a0e2c4b8b25105949a9bff2b465edb68,
         type: 3}
@@ -129,7 +143,7 @@ PrefabInstance:
     - target: {fileID: 2824148962842134435, guid: a0e2c4b8b25105949a9bff2b465edb68,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 109.713005
       objectReference: {fileID: 0}
     - target: {fileID: 2824148962842134435, guid: a0e2c4b8b25105949a9bff2b465edb68,
         type: 3}
